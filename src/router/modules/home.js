@@ -13,7 +13,10 @@ let routes = [
         redirect: '/home'
     }, {
         name: 'home',
-        path: '/home',
+        path: '/home'
+    }, {
+        name: 'list',
+        path: '/list'
     }
 ]
 

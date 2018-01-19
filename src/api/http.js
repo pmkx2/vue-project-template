@@ -1,7 +1,22 @@
 import axios from 'axios'
+import * as md5 from 'md5'
+import stringify from 'qs/lib/stringify'
 import config from 'common/config'
 
-// 处理错误
+const host = config.api.host
+
+// build http header
+function buildHeader(option) {
+    let headers = {
+        'X-Application-Key': config.api.key,
+        'X-Request-Sign': '',
+    }
+    if (option) {
+        headers = { ...headers, ...option }
+    }
+    return headers
+}
+
 function handleError (err) {
     // 如果是手动取消的请求，不显示错误信息
     if (axios.isCancel(err)) {
@@ -12,10 +27,43 @@ function handleError (err) {
     }
 }
 
+function processData(apiData = {}) {
+    let data = { ...apiData }
+    let token = config.token
+    if (!token) {
+        return data
+    }
+    if (data instanceof FormData) {
+        data.append('token', token)
+    } else {
+        data.token = token
+    }
+    return data
+}
+
+export let ax = axios.create({
+    baseURL: host,
+    headers: buildHeader(),
+    timeout: 10000,
+    responseType: 'json',
+    transformRequest: [function (data) {
+        if (data instanceof FormData) return data
+        return stringify(data)
+    }],
+    transformResponse: [function (data) {
+        if (data) {
+            
+        } else {
+            let msg = 'Unknow Error'
+            throw new Error(msg)
+        }
+    }]
+})
+
 // http get method
 export function get(url, data) {
-    return axios.get(`${config.api.host}${url}`, {
-        params: data
+    return ax.get(`${host}${url}`, {
+        params: processData(data)
     }).then((res) => {
         return res
     }).catch((err) => {
@@ -26,8 +74,8 @@ export function get(url, data) {
 
 // http post method
 export function post(url, data) {
-    return axios.get(`${config.api.host}${url}`, {
-        params: data
+    return ax.get(`${host}${url}`, {
+        params: processData(data)
     }).then((res) => {
         return res
     }).catch((err) => {

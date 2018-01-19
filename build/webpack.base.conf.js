@@ -75,25 +75,25 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       },
-      {
-        test: /\.(css|scss)(\?.*)?$/,
-        use: [{
-          loader: 'style!css!sass'
-        },{
-          loader: 'postcss-loader',
-          options: {
-            sourceMap: true,
-            // config: {
-            //     path: 'postcss.config.js'
-            // }
-            config: {
-                plugins: [
-                    require('autoprefixer')
-                ]
-            }
-          }
-        }]
-      }
+    //   {
+    //     test: /\.(css|scss)(\?.*)?$/,
+    //     use: [{
+    //       loader: 'style!css!sass'
+    //     },{
+    //       loader: 'postcss-loader',
+    //       options: {
+    //         sourceMap: true,
+    //         config: {
+    //             path: 'postcss.config.js'
+    //         }
+    //         // config: {
+    //         //     plugins: [
+    //         //         require('autoprefixer')
+    //         //     ]
+    //         // }
+    //       }
+    //     }]
+    //   }
     ]
   },
   node: {
