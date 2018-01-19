@@ -1,0 +1,36 @@
+// 全局变量
+
+// 字体粗细
+$font-normal: 400;
+$font-medium: 500;
+$font-light:  300;
+$font-thin:   100;
+
+//-- 基础元素 --------------------------------------------------
+//-- 字体色
+$color-font-main:       #585f6f;  //主字体色
+$color-font-sub:        #8d8d8d;  //次要字体色
+//-- 背景色
+$color-grey-light2: 	#f1f1f1;	//浅灰（浅）
+//-- 元素色
+$color-white: 			#fff;		//白
+$color-grey-light: 		#ddd;		//浅灰
+$color-grey:            #8d8d8d;    //灰
+$color-grey2:           #b7b7b7;    //灰2
+$color-grey-dark: 		#585f6f;	//深灰
+$color-back-light:      #4b525b;    //黑（浅）
+$color-back:            #2b3443;    //黑
+$color-orange: 			#f56e4e;	//橙色
+$color-red: 			#eb2f18;	//红
+//-- 边框色
+$border-grey:           #bbbbbb;
+
+//-- 基础字体大小
+$font-size-base:		28px;	//基础字体大小
+$font-size-small:		24px;
+$font-size-large:		32px;
+$font-size-large-big:	36px;
+
+
+// 字体
+$font-family: BlinkMacSystemFont, 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;

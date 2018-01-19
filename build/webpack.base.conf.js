@@ -3,11 +3,11 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+var webpack = require('webpack')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-
 
 
 module.exports = {
@@ -24,9 +24,19 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
+    modules: [
+        resolve('src'),
+        resolve('node_modules')
+    ],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      'vue': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'src': resolve('src'),
+      'common': resolve('src/common'),
+      'router': resolve('src/router'),
+      'assets': resolve('src/assets'),
+      'style': resolve('src/style'),
+      'components': resolve('src/views/components')
     }
   },
   module: {
@@ -64,6 +74,25 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.(css|scss)(\?.*)?$/,
+        use: [{
+          loader: 'style!css!sass'
+        },{
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true,
+            // config: {
+            //     path: 'postcss.config.js'
+            // }
+            config: {
+                plugins: [
+                    require('autoprefixer')
+                ]
+            }
+          }
+        }]
       }
     ]
   },
@@ -78,5 +107,9 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+    plugins: [
+        new webpack.optimize.ModuleConcatenationPlugin(),
+        new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /zh-cn/)
+    ]
 }
