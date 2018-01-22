@@ -1,5 +1,6 @@
 import Vue from 'src/views/base'
 import Component from 'vue-class-component'
+import { State } from 'vuex-class'
 
 import NavHeader from 'components/navHeader'  // 引入头部组件
 import NavFooter from 'components/navFooter'  // 引入底部组件
@@ -24,9 +25,11 @@ export default class Home extends Vue {
         '底部选项3'
     ]
 
+    @State('StoreConfig') StoreConfig
 
     get isLoading() {
-        return this.$store.state.StoreConfig.isLoading
+        // return this.$store.state.StoreConfig.isLoading
+        return this.storeConfig.isLoading
     }
 
 
@@ -60,6 +63,5 @@ export default class Home extends Vue {
 
     created() {
         console.log('页面加载完毕！')
-        let a = ['d','d']
     }
 }
