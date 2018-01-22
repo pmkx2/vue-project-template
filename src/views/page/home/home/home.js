@@ -35,14 +35,14 @@ export default class Home extends Vue {
     }
 
     clickButtonItem(itemName) {
-        console.log('点击选项：' + itemName);
+        console.log('点击选项：' + itemName)
     }
 
     changeLoading() {
-        this.$store.commit('pageLoading', true);
-        var self = this;
+        this.$store.commit('pageLoading', true)
+        let self = this;
         setTimeout(function () {
-            self.$store.commit('pageLoading', false);
+            self.$store.commit('pageLoading', false)
         }, 2000)
     }
 
@@ -51,14 +51,15 @@ export default class Home extends Vue {
         try {
             this.list = await this.api.home.getList(data);
             console.log('列表加载成功!')
-            this.listLoading = false;
+            this.listLoading = false
         } catch (err) {
-            this.listLoading = false;
+            this.listLoading = false
         }
     }
 
 
     created() {
-        console.log('页面加载完毕！');
+        console.log('页面加载完毕！')
+        let a = ['d','d']
     }
 }
