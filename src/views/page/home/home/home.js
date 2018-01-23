@@ -1,5 +1,5 @@
 import Vue from 'src/views/base'
-import Component from 'vue-class-component'
+import { Component, Prop, Watch } from 'vue-property-decorator'
 import { Store } from 'store/modules/home'
 
 import NavHeader from 'components/navHeader'
@@ -7,7 +7,6 @@ import NavFooter from 'components/navFooter'
 
 @Component({
     name: 'home',
-    props: {},
     components: {
         NavHeader,
         NavFooter
@@ -70,13 +69,10 @@ export default class Home extends Vue {
         }
     }
 
-    // watch() {
-    //     msg: {
-    //         changeMsg: (val) => {
-    //             console.log(val)
-    //         }
-    //     }
-    // }
+    @Watch('msg', { deep: true })
+    changeMsg(val) {
+        console.log(val)
+    }
 
     // 约定放置于底部
     created() {
