@@ -22,7 +22,7 @@ function handleError (err) {
     if (axios.isCancel(err)) {
         console.log(err)
     } else {
-        // 错误处理：自行添加
+        // 错误处理
         console.log('api接口报错，请检查地址是否正确')
     }
 }

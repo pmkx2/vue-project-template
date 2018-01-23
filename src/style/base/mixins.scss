@@ -8,42 +8,39 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 // 文字阴影
 @mixin text-shadow($shadow) {
-    -webkit-text-shadow: $shadow;
-    -moz-text-shadow: $shadow;
-    -ms-text-shadow: $shadow;
     text-shadow: $shadow;
 }
+
 // 盒阴影
 @mixin box-shadow($shadow) {
-    -webkit-box-shadow: $shadow;
-    -moz-box-shadow: $shadow;
-    -ms-box-shadow: $shadow;
     box-shadow: $shadow;
 }
+
 // 渐变
 @mixin background-image($color) {
-    -webkit-background-image: $color;
-    -moz-background-image: $color;
-    -ms-background-image: $color;
     background-image: $color;
 }
+
 // 渐变
 @mixin text-gradient($color) {
     background: $color;
-    -webkit-background-clip: text;
     color: transparent;
     text-transform: uppercase;
+    background-clip: text;
 }
 
 // opacity
 @mixin opacity($opacity) {
+    opacity: $opacity;
+
     @if $opacity == 1 {
         filter: "progid:DXImageTransform.Microsoft.Alpha(enabled=false)";
     }
+
     @else {
         filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})";
     }
-    opacity: $opacity;
 }

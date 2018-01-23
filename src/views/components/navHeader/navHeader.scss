@@ -1,4 +1,4 @@
-@import "../../../style/base/variables";
+@import "src/style/base/base";
 
 // 头部
 .nav-header {
@@ -6,8 +6,8 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 96px;
-    line-height: 96px;
+    height: 48px;
+    line-height: 48px;
     background: $color-grey-dark;
     font-size: $font-size-large-big;
     color: $color-white;

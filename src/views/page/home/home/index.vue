@@ -25,11 +25,15 @@
                 <div v-show="isLoading === false">加载完成</div>
                 <button @click="changeLoading">改变加载中状态</button>
             </div>
-        
+
             <!-- API数据获取 -->
             <p>
-                <button @click="getList22">API数据获取</button>
+                <button @click="getList">API数据获取</button>
             </p>
+
+            <div>
+                <input v-model="testTxt">
+            </div>
         </div>
     </div>
 </template>

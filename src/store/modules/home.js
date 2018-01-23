@@ -1,14 +1,13 @@
 import Vuex from 'vuex'
-import { State, Getter, Mutation, Action, namespace } from 'vuex-class'
-import keymirror from '../utils/keymirror'
-import { getter, mutation, action, decorator } from '../utils/vuexUtil'
+import { getTypes, getModule, getStore } from '../utils/storeUtil'
+import { getter, mutation, action } from '../utils/vuexUtil'
 import api from 'api'
 
 export const storeName = 'home'
 
 /*** state ***/
 let state = {
-    list: [],
+    tmpList: [],
     isLoading: false
 }
 
@@ -19,16 +18,16 @@ let getters = getter(state, {
 
 /*** mutations ***/
 let mutations = mutation(state, {
-    setList(state, data) {
-        state.list = data
+    setTmpList(state, data) {
+        state.tmpList = data
     }
 })
 
 /*** actions ***/
 let actions = action(state, {
-    async getList({ commit }) {
+    async getTmpList({ commit }) {
         let res = await api.home.getList()
-        commit('setList', res)
+        commit('setTmpList', res)
     },
 
     pageLoading({ commit }, loading) {
@@ -42,29 +41,12 @@ let store = {
     state,
     getters,
     mutations,
-    actions,
+    actions
 }
 
 /*** exports ***/
-export let types = {
-    state: keymirror(state),
-    getter: keymirror(getters),
-    mutation: keymirror(mutations),
-    action: keymirror(actions)
-}
-
-export let module = {
-    State: namespace(storeName, State),
-    Getter: namespace(storeName, Getter),
-    Mutation: namespace(storeName, Mutation),
-    Action: namespace(storeName, Action)
-}
-
-export let Store = {
-    state: decorator(module.State, types.state),
-    getter: decorator(module.Getter, types.getters),
-    mutaion: decorator(module.Mutation, types.mutations),
-    action: decorator(module.Action, types.actions)
-}
+export let types = getTypes(store)
+export let module = getModule(storeName)
+export let Store = getStore(module, types)
 
 export default store

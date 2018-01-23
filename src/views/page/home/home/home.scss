@@ -1,5 +1,5 @@
 // 引入变量，以提供引用
-@import "../../../../style/base/variables";
+@import "src/style/base/base";
 
 h1,
 h2 {
@@ -10,7 +10,7 @@ h2 {
 
 input,
 button {
-    font-size: 24px;
+    font-size: 12px;
 }
 
 .content-body {

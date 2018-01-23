@@ -74,26 +74,7 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      },
-    //   {
-    //     test: /\.(css|scss)(\?.*)?$/,
-    //     use: [{
-    //       loader: 'style!css!sass'
-    //     },{
-    //       loader: 'postcss-loader',
-    //       options: {
-    //         sourceMap: true,
-    //         config: {
-    //             path: 'postcss.config.js'
-    //         }
-    //         // config: {
-    //         //     plugins: [
-    //         //         require('autoprefixer')
-    //         //     ]
-    //         // }
-    //       }
-    //     }]
-    //   }
+      }
     ]
   },
   node: {
@@ -109,7 +90,5 @@ module.exports = {
     child_process: 'empty'
   },
     plugins: [
-        new webpack.optimize.ModuleConcatenationPlugin(),
-        new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /zh-cn/)
     ]
 }
