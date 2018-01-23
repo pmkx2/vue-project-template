@@ -13,7 +13,4 @@ import Component from 'vue-class-component';
     }
 })
 export default class NavHeader extends Vue {
-    created (){
-        console.log('使用this获取属性：', this)
-    }
 }

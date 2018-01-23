@@ -1,6 +1,6 @@
 import Vue from 'src/views/base'
 import Component from 'vue-class-component'
-import { State } from 'vuex-class'
+import { Store } from 'store/modules/home'
 
 import NavHeader from 'components/navHeader'  // 引入头部组件
 import NavFooter from 'components/navFooter'  // 引入底部组件
@@ -25,31 +25,34 @@ export default class Home extends Vue {
         '底部选项3'
     ]
 
-    @State('StoreConfig') StoreConfig
 
-    get isLoading() {
-        // return this.$store.state.StoreConfig.isLoading
-        return this.storeConfig.isLoading
-    }
+    // Store
+    @Store.state('isLoading') isLoading
+    @Store.action('getList') getList
+    @Store.action('pageLoading') pageLoading
 
 
+    // 改变标题
     changeTitle() {
         this.title = '标题已改变';
     }
 
+    // 点击底部选项
     clickButtonItem(itemName) {
         console.log('点击选项：' + itemName)
     }
 
+    // 改变加载中状态
     changeLoading() {
-        this.$store.commit('pageLoading', true)
+        this.pageLoading(true)
         let self = this;
         setTimeout(function () {
-            self.$store.commit('pageLoading', false)
+            self.pageLoading(false)
         }, 2000)
     }
 
-    async getList(data) {
+    // 独立获取数据
+    async getList22(data) {
         this.listLoading = true;
         try {
             this.list = await this.api.home.getList(data);
@@ -60,8 +63,9 @@ export default class Home extends Vue {
         }
     }
 
-
+    // 渲染完成后操作：约定放置于底部
     created() {
-        console.log('页面加载完毕！')
+        console.log(this.isLoading)
+        // this.getList()
     }
 }

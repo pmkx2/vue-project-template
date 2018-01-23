@@ -20,15 +20,15 @@
             </p>
         
             <!-- 改变状态 -->
-            <p>
+            <div>
                 <div v-show="isLoading === true">加载中...</div>
                 <div v-show="isLoading === false">加载完成</div>
                 <button @click="changeLoading">改变加载中状态</button>
-            </p>
+            </div>
         
             <!-- API数据获取 -->
             <p>
-                <button @click="getList">API数据获取</button>
+                <button @click="getList22">API数据获取</button>
             </p>
         </div>
     </div>
