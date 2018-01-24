@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-import home from './modules/home'
+import demo from './modules/demo'
 
 export default {
     axios: axios,
-    home
+    demo
 }

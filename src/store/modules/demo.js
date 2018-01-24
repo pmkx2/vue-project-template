@@ -3,7 +3,7 @@ import { getTypes, getModule, getStore } from '../utils/storeUtil'
 import { getter, mutation, action } from '../utils/vuexUtil'
 import api from 'api'
 
-export const storeName = 'home'
+export const storeName = 'demo'
 
 /*** state ***/
 let state = {
@@ -26,7 +26,7 @@ let mutations = mutation(state, {
 /*** actions ***/
 let actions = action(state, {
     async getTmpList({ commit }) {
-        let res = await api.home.getList()
+        let res = await api.demo.getList()
         commit('setTmpList', res)
     },
 

@@ -22,6 +22,6 @@ export default class List extends Vue {
     ]
 
     created() {
-        console.log(this.title);
+        console.log(this.title)
     }
 }

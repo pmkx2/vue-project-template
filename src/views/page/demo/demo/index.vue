@@ -34,9 +34,13 @@
             <div>
                 <input v-model="testTxt">
             </div>
+
+            <div>
+                <icon icon="vue" width="40" color="#42b983 #35495e"></icon>
+            </div>
         </div>
     </div>
 </template>
 
-<script src="./home.js"></script>
-<style src="./home.scss" lang="scss" scoped></style>
+<script src="./demo.js"></script>
+<style src="./demo.scss" lang="scss" scoped></style>

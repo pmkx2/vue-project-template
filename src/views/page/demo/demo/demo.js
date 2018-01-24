@@ -1,12 +1,12 @@
 import Vue from 'src/views/base'
 import { Component, Prop, Watch } from 'vue-property-decorator'
-import { Store } from 'store/modules/home'
+import { Store } from 'store/modules/demo'
 
 import NavHeader from 'components/navHeader'
 import NavFooter from 'components/navFooter'
 
 @Component({
-    name: 'home',
+    name: 'demo',
     components: {
         NavHeader,
         NavFooter
@@ -31,6 +31,7 @@ export default class Home extends Vue {
     get testTxt() {
         return this.txt + '-t'
     }
+
 
     // Store
     @Store.state('isLoading') isLoading
@@ -61,7 +62,7 @@ export default class Home extends Vue {
     async getList(data) {
         this.listLoading = true;
         try {
-            this.list = await this.api.home.getList(data);
+            this.list = await this.api.demo.getList(data)
             console.log('列表加载成功!')
             this.listLoading = false
         } catch (err) {
@@ -69,6 +70,7 @@ export default class Home extends Vue {
         }
     }
 
+    // 监听信息
     @Watch('msg', { deep: true })
     changeMsg(val) {
         console.log(val)

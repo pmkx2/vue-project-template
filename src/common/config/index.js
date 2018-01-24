@@ -1,9 +1,11 @@
-export default {
-    version: '1.0.0',
-    env: 'dev',
-    api: {
-        host: 'https://asdfsdffdsdffdsdf.com',
-        secret: '',
-        key: ''
-    }
+import env from 'src/env'
+
+import * as deepExtend from 'deep-extend'
+
+if (env.env !== 'deploy') {
+    console.log('version:' + env.version)
 }
+
+export default deepExtend(env, {
+    token: ''
+})

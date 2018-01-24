@@ -9,6 +9,7 @@
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
+    "svg": "vsvg -s ./src/assets/svg -t ./src/views/icons",
     "build": "node build/build.js"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
     "axios": "^0.17.1",
     "babel-eslint": "^8.2.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "deep-extend": "^0.5.0",
     "eslint-plugin-babel": "^4.1.2",
     "md5": "^2.2.1",
     "node-sass": "^4.7.2",
@@ -29,6 +31,7 @@
     "vue-class-component": "^6.1.2",
     "vue-property-decorator": "^6.0.0",
     "vue-router": "^3.0.1",
+    "vue-svgicon": "^2.1.1",
     "vuex": "^3.0.1",
     "vuex-class": "^0.3.0"
   },

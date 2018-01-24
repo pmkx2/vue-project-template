@@ -2,7 +2,7 @@
 function getView(viewName) {
     return (resolve, reject) => {
         require.ensure([], (require) => {
-            resolve(require(`src/views/page/home/${viewName}`))
+            resolve(require(`src/views/page/demo/${viewName}`))
         }, reject, 'home')
     }
 }
@@ -10,10 +10,10 @@ function getView(viewName) {
 let routes = [
     {
         path: '',
-        redirect: '/home'
+        redirect: '/demo'
     }, {
-        name: 'home',
-        path: '/home'
+        name: 'demo',
+        path: '/demo'
     }, {
         name: 'list',
         path: '/list'

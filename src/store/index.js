@@ -6,7 +6,7 @@ import Vuex   from 'vuex'
 import { mutation } from './utils/vuexUtil'
 
 // import modules
-import home from './modules/home'
+import demo from './modules/demo'
 
 Vue.use(Vuex)
 
@@ -18,7 +18,7 @@ let store = new Vuex.Store({
     getters: {},
     actions: {},
     modules: {
-        home
+        demo
     }
 })
 
