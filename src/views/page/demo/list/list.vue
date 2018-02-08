@@ -7,8 +7,10 @@
         <!-- 底部组件 -->
         <nav-footer :items="footerItem"></nav-footer>
 
+        <div class="content-body">
+            test
+        </div>
     </div>
 </template>
 
-<script src="./list.js"></script>
 <style src="./list.scss" lang="scss" scoped></style>

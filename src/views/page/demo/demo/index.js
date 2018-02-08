@@ -1,18 +1,20 @@
 import Vue from 'src/views/base'
 import { Component, Prop, Watch } from 'vue-property-decorator'
+import template from './demo.vue'
 import { Store } from 'store/modules/demo'
 
-import NavHeader from 'components/navHeader'
-import NavFooter from 'components/navFooter'
+import NavHeader from '../unit/navHeader'
+import NavFooter from '../unit/navFooter'
 
 @Component({
     name: 'demo',
+    mixins: [template],
     components: {
         NavHeader,
         NavFooter
     }
 })
-export default class Home extends Vue {
+export default class Demo extends Vue {
     listLoading = false
     title = '头部组件'
     msg = '项目页'
@@ -56,6 +58,20 @@ export default class Home extends Vue {
         setTimeout(() => {
             self.pageLoading(false)
         }, 2000)
+    }
+
+    // 跳转
+    runGoTo1() {
+        this.goTo('list')
+    }
+    // 跳转
+    runGoTo2() {
+        this.goTo({
+            path: 'otherPage/list',
+            query: {
+                id: '1'
+            }
+        })
     }
 
     // 独立获取数据

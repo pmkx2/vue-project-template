@@ -38,9 +38,12 @@
             <div>
                 <icon icon="vue" width="40" color="#42b983 #35495e"></icon>
             </div>
+
+            <div>
+                <button @click="runGoTo1">跳转test1</button>
+                <button @click="runGoTo2">跳转test2</button>
+            </div>
         </div>
     </div>
 </template>
-
-<script src="./demo.js"></script>
 <style src="./demo.scss" lang="scss" scoped></style>

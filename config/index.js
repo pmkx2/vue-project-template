@@ -4,6 +4,28 @@
 
 const path = require('path')
 
+function getIPAdress() {
+    // var interfaces = require('os').networkInterfaces();
+    // for (var devName in interfaces) {
+    //     var iface = interfaces[devName];
+    //     for (var i = 0; i < iface.length; i++) {
+    //         var alias = iface[i];
+    //         if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
+    //             return alias.address;
+    //         }
+    //     }
+    // }
+    var os = require('os');
+    var IPv4, hostName;
+    hostName = os.hostname();
+    for (var i = 0; i < os.networkInterfaces().en0.length; i++) {
+        if (os.networkInterfaces().en0[i].family == 'IPv4') {
+            IPv4 = os.networkInterfaces().en0[i].address;
+        }
+    }
+    return IPv4
+}
+
 module.exports = {
   dev: {
 
@@ -13,7 +35,7 @@ module.exports = {
     proxyTable: {},
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
+    host: getIPAdress() || 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,

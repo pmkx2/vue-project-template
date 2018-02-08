@@ -1,12 +1,13 @@
 import Vue from 'src/views/base'
-import Component from 'vue-class-component'
+import { Component, Prop, Watch } from 'vue-property-decorator'
+import template from './list.vue'
 
-import NavHeader from 'components/navHeader'  // 引入头部组件
-import NavFooter from 'components/navFooter'  // 引入底部组件
+import NavHeader from '../unit/navHeader'  // 引入头部组件
+import NavFooter from '../unit/navFooter'  // 引入底部组件
 
 @Component({
     name: 'list',
-    props: {},
+    mixins: [template],
     components: {
         NavHeader,
         NavFooter

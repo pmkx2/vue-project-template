@@ -1,9 +1,11 @@
 /* 组件：底部 */
 import Vue from 'src/views/base';
 import { Component, Prop, Watch } from 'vue-property-decorator'
+import template from './navFooter.vue'
 
 @Component({
     name: 'navFooter',
+    mixins: [template],
     components: {
     }
 })

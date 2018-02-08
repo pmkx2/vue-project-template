@@ -14,5 +14,4 @@
     </footer>
 </template>
 
-<script src="./navFooter.js"></script>
 <style src="./navFooter.scss" lang="scss" scoped></style>
