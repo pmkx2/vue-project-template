@@ -43,6 +43,13 @@
                 <button @click="runGoTo1">跳转test1</button>
                 <button @click="runGoTo2">跳转test2</button>
             </div>
+
+            <div class="mt-20">
+                本地缓存测试（storage）<br>
+                <input v-model="storTest"><br>
+                <button @click="setStorageTest('storage-test')">写入缓存</button>
+                <button @click="removeStorageTest">删除缓存</button>
+            </div>
         </div>
     </div>
 </template>

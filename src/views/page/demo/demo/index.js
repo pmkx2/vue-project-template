@@ -1,6 +1,8 @@
 import Vue from 'src/views/base'
 import { Component, Prop, Watch } from 'vue-property-decorator'
 import template from './demo.vue'
+
+import storage from 'src/unit/storage'
 import { Store } from 'store/modules/demo'
 
 import NavHeader from '../unit/navHeader'
@@ -26,6 +28,7 @@ export default class Demo extends Vue {
         '底部选项2',
         '底部选项3'
     ]
+    storTest = ''
 
     set testTxt(txt) {
         this.txt = txt
@@ -86,7 +89,22 @@ export default class Demo extends Vue {
         }
     }
 
-    // 监听信息
+    // storage test ------------------------
+    // 写入storage
+    setStorageTest(txt = 'test') {
+        storage.set('stoageTest', txt)
+        this.storTest = storage.get('stoageTest')
+    }
+
+    // 删除storage
+    removeStorageTest() {
+        storage.remove('stoageTest')
+        if (!storage.get('stoageTest')) {
+            this.storTest = ''
+        }
+    }
+
+    // 监听信息 ------------------------
     @Watch('msg', { deep: true })
     changeMsg(val) {
         console.log(val)
