@@ -1,0 +1,22 @@
+@import "src/style/base/base";
+
+.demo-box {
+    margin: 20px 10px;
+    text-align: center;
+}
+
+.flex-demo {
+    border-radius: 4px;
+    background-color: #20b907;
+    background-clip: padding-box;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.popup-position-vertical {
+    padding: 15px;
+    background-color: #ffe26d;
+    color: #000;
+    text-align: center;
+}

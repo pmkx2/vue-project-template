@@ -6,3 +6,6 @@
 
 <script src="./app.js"></script>
 <style src="./app.scss" lang="scss" scoped></style>
+<style lang="less">
+    @import '~vux/src/styles/reset.less';
+</style>

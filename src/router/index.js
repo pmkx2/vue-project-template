@@ -16,6 +16,10 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     next()
+    let $loading = document.querySelector('#appPageLoading')
+    if ($loading) {
+        $loading.remove()
+    }
 })
 
 export default router
