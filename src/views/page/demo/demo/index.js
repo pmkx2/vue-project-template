@@ -108,6 +108,25 @@ export default class Demo extends Vue {
         console.log(val)
     }
 
+
+    // 代码规范测试区域：此方法内代码有报红时，代码规范检测功能正常。 ---------------------
+    codeTest() {
+        let ary=['a','b'];
+        if(ary){
+            console.log(ary)
+        }
+        let fn1 = (num) => {
+            let fntest = num > 0 ? true : false
+            let fntest2 = 'aa'
+            let ary_3 = [ '1', '2' ]
+            console.log(ary_3)
+            return fntest + fntest2
+        }
+        fn1()
+    }
+
+
+
     // 约定放置于底部
     created() {
         console.log(this.isLoading)
