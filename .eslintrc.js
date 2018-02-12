@@ -1,67 +1,32 @@
+// https://eslint.org/docs/user-guide/configuring
+
 module.exports = {
-    "extends": "google",
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
-            "jsx": true,
-            "arrowFunctions": true,
-            "classes": true,
-            "modules": true,
-            "defaultParams": true
-        },
-        "sourceType": "module"
+    root: true,
+    parserOptions: {
+        parser: 'babel-eslint'
     },
-    "plugins": [
-        "babel",
-        // "html"
+    env: {
+        browser: true,
+    },
+    extends: [
+        // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+        // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+        'plugin:vue/essential',
+        // https://github.com/standard/standard/blob/master/docs/RULES-en.md
+        'standard'
     ],
-    "env": {
-        "amd": true,
-        "es6": true,
-        "browser": true
-    },
-    "rules": {
-        "quotes": [
-            2,
-            "single"
-        ],
-        "semi": [
-            2,
-            "always"
-        ],
-        "comma-dangle": [
-            2, 
-            "always"
-        ],
-        'indent': [
-            1, 
-            4, 
-            { 
-                'SwitchCase': 1
-            }
-        ],
-        'brace-style': [
-            2, 
-            '1tbs', 
-            { 
-                'allowSingleLine': true
-            }
-        ],
-        "comma-spacing": [
-            2, 
-            { 
-                'before': true, 
-                'after': true 
-            }
-        ],
-        'array-bracket-spacing': [
-            2, 
-            'always'
-        ],
-        'computed-property-spacing': [
-            2,
-            'always'
-        ]
+    // required to lint *.vue files
+    plugins: [
+        'vue'
+    ],
+    // add your custom rules here
+    rules: {
+        // allow async-await
+        'generator-star-spacing': 'off',
+        'indent': [1, 4, {
+            'SwitchCase': 1
+        }],
+        // allow debugger during development
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
     }
-};
+}

@@ -1,5 +1,5 @@
 import Vue from 'src/views/base'
-import { Component, Prop, Watch } from 'vue-property-decorator'
+import { Component, Watch } from 'vue-property-decorator'
 import template from './demo.vue'
 
 import storage from 'src/unit/storage'
@@ -37,12 +37,10 @@ export default class Demo extends Vue {
         return this.txt + '-t'
     }
 
-
     // Store
     @Store.state('isLoading') isLoading
     @Store.action('getTmpList') getTmpList
     @Store.action('pageLoading') pageLoading
-
 
     // 改变标题
     changeTitle() {
@@ -57,7 +55,7 @@ export default class Demo extends Vue {
     // 改变加载中状态
     changeLoading() {
         this.pageLoading(true)
-        let self = this;
+        let self = this
         setTimeout(() => {
             self.pageLoading(false)
         }, 2000)
@@ -79,7 +77,7 @@ export default class Demo extends Vue {
 
     // 独立获取数据
     async getList(data) {
-        this.listLoading = true;
+        this.listLoading = true
         try {
             this.list = await this.api.demo.getList(data)
             console.log('列表加载成功!')

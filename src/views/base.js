@@ -7,7 +7,7 @@ export default class Base extends Vue {
     config = config
 
     // 页面跳转
-    goTo(options) {
+    goTo (options) {
         this.$router.push(options)
     }
 }
