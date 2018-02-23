@@ -17,6 +17,9 @@ let routes = [
     }, {
         name: 'list',
         path: '/list'
+    }, {
+        name: 'vuxDemo',
+        path: '/vuxDemo'
     }
 ]
 

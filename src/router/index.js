@@ -46,6 +46,10 @@ let cachePage = (to, from, next) => {
 router.beforeEach((to, from, next) => {
     cachePage(to, from, next)
     next()
+    let $loading = document.querySelector('#appPageLoading')
+    if ($loading) {
+        $loading.remove()
+    }
 })
 
 export default router
