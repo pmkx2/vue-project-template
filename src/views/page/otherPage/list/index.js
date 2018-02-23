@@ -9,9 +9,10 @@ import template from './list.vue'
     }
 })
 export default class List extends Vue {
-    title = '列表页面'
+    title = '其他列表页面'
 
     created() {
-        console.log(this.title)
+        console.log('刷新：其他页面')
+        // console.log(this.title)
     }
 }

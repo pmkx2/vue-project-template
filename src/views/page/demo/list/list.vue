@@ -1,6 +1,5 @@
 <template>
     <div>
-        
         <!-- 头部组件 -->
         <nav-header :title="title"></nav-header>
 
@@ -8,7 +7,7 @@
         <nav-footer :items="footerItem"></nav-footer>
 
         <div class="content-body">
-            test
+            <list-view></list-view>
         </div>
     </div>
 </template>

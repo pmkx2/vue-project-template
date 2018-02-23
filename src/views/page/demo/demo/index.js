@@ -125,11 +125,9 @@ export default class Demo extends Vue {
         fn1()
     }
 
-
-
     // 约定放置于底部
     created() {
-        console.log(this.isLoading)
+        // console.log(this.isLoading)
         // this.getTmpList()
     }
 }

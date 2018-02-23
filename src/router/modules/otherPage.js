@@ -11,10 +11,6 @@ let routes = [
     {
         name: 'list',
         path: '/otherPage/list'
-    },
-    {
-        name: 'projectDetail',
-        path: '/otherPage/projectDetail'
     }
 ]
 
