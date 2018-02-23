@@ -57,6 +57,7 @@ export default class VuxDemo extends Vue {
     popUpRight = false
     popUpTop = false
     popUpBottom = false
+    popUpFull = false
 
     // 显示Toast
     showToast() {

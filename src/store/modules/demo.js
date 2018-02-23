@@ -5,25 +5,25 @@ import api from 'api'
 
 export const storeName = 'demo'
 
-/*** state ***/
+/** state **/
 let state = {
     tmpList: [],
     isLoading: false
 }
 
-/*** getters ***/
+/** getters **/
 let getters = getter(state, {
 
 })
 
-/*** mutations ***/
+/** mutations **/
 let mutations = mutation(state, {
     setTmpList(state, data) {
         state.tmpList = data
     }
 })
 
-/*** actions ***/
+/** actions **/
 let actions = action(state, {
     async getTmpList({ commit }) {
         let res = await api.demo.getList()
@@ -35,7 +35,7 @@ let actions = action(state, {
     }
 })
 
-/*** module store ***/
+/** module store **/
 let store = {
     namespaced: true,
     state,
@@ -44,7 +44,7 @@ let store = {
     actions
 }
 
-/*** exports ***/
+/** exports **/
 export let types = getTypes(store)
 export let module = getModule(storeName)
 export let Store = getStore(module, types)

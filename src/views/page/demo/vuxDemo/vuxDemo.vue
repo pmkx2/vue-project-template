@@ -67,6 +67,7 @@
             <x-switch title="左侧滑窗(100%)" v-model="popUpRight"></x-switch>
             <x-switch title="顶部(无背景)" v-model="popUpTop"></x-switch>
             <x-switch title="底部" v-model="popUpBottom"></x-switch>
+            <x-switch title="底部(全页)" v-model="popUpFull"></x-switch>
         </group>
         <!-- popUp：左侧 -->
         <div v-transfer-dom>
@@ -94,11 +95,19 @@
                 </div>
             </popup>
         </div>
-        <!-- popUp：顶部 -->
+        <!-- popUp：底部 -->
         <div v-transfer-dom>
             <popup v-model="popUpBottom" position="bottom" :show-mask="false">
                 <div class="popup-position-vertical">
                     底部popUp 2秒后隐藏
+                </div>
+            </popup>
+        </div>
+        <!-- popUp：底部往上全高 -->
+        <div v-transfer-dom>
+            <popup v-model="popUpFull" height="100%">
+                <div style="position: absolute; right: 20px; top: 20px;">
+                    <x-button @click.native="popUpFull = false" mini type="warn">X</x-button>
                 </div>
             </popup>
         </div>
