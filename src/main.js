@@ -8,15 +8,19 @@ import store from 'store'
 import 'src/style/app.scss'
 import App from 'src/views/app'
 
+// ui
+import 'common/ui'
+// directives
+import 'common/directives'
+// responsive
+// import 'common/responsive'
+
 // import all icons
 import * as svgicon from 'vue-svgicon'
 import './views/icons'
 Vue.use(svgicon, {
     tagName: 'icon'
 })
-
-// ui
-import 'common/ui'
 
 const FastClick = require('fastclick')
 FastClick.attach(document.body)

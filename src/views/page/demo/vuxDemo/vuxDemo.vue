@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page-view">
         <!-- group -->
         <group>
             <cell title="title" value="cell测试"></cell>
@@ -71,19 +71,19 @@
         </group>
         <!-- popUp：左侧 -->
         <div v-transfer-dom>
-            <popup v-model="popUpRight" position="right" width="100%">
-                <div style="width: 100%; padding: 10px;">
-                    <x-button @click.native="popUpRight = false" type="warn">关闭</x-button>
+            <popup v-model="popUpLeft" position="left" @touchmove.native.prevent>
+                <div style="width: 150px; padding: 0 10px;">
+                    <x-button>菜单1</x-button>
+                    <x-button>菜单2</x-button>
+                    <x-button @click.native="popUpLeft = false" type="warn">关闭</x-button>
                 </div>
             </popup>
         </div>
         <!-- popUp：右侧 -->
         <div v-transfer-dom>
-            <popup v-model="popUpLeft" position="left" :show-mask="true">
-                <div style="width: 150px; padding: 0 10px;">
-                    <x-button>菜单1</x-button>
-                    <x-button>菜单2</x-button>
-                    <x-button @click.native="popUpLeft = false" type="warn">关闭</x-button>
+            <popup v-model="popUpRight" position="right" width="100%">
+                <div style="width: 100%; padding: 10px;">
+                    <x-button @click.native="popUpRight = false" type="warn">关闭</x-button>
                 </div>
             </popup>
         </div>
@@ -97,7 +97,7 @@
         </div>
         <!-- popUp：底部 -->
         <div v-transfer-dom>
-            <popup v-model="popUpBottom" position="bottom" :show-mask="false">
+            <popup v-model="popUpBottom" position="bottom">
                 <div class="popup-position-vertical">
                     底部popUp 2秒后隐藏
                 </div>
@@ -105,9 +105,12 @@
         </div>
         <!-- popUp：底部往上全高 -->
         <div v-transfer-dom>
-            <popup v-model="popUpFull" height="100%">
-                <div style="position: absolute; right: 20px; top: 20px;">
+            <popup v-model="popUpFull" height="80%">
+                <div style="position: absolute; right: 10px; top: 10px;">
                     <x-button @click.native="popUpFull = false" mini type="warn">X</x-button>
+                </div>
+                <div class="popup-content-box">
+                    <div v-for="v in 30" :key="v" class="li-box">内容{{ v }}</div>
                 </div>
             </popup>
         </div>

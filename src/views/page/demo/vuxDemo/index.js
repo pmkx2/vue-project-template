@@ -3,8 +3,6 @@ import { Component, Prop, Watch } from 'vue-property-decorator'
 import template from './vuxDemo.vue'
 
 import {
-    TransferDom,
-
     Badge,
     GroupTitle,
     Group,
@@ -12,21 +10,13 @@ import {
     CheckIcon,
     Datetime,
     Picker,
-    XButton,
     Divider,
-    Flexbox,
-    FlexboxItem,
-    Qrcode,
-    XSwitch,
-    Popup
+    Qrcode
 } from 'vux'
 
 @Component({
     name: 'vuxDemo',
     mixins: [template],
-    directives: {
-        TransferDom
-    },
     components: {
         Badge,
         GroupTitle,
@@ -35,13 +25,8 @@ import {
         CheckIcon,
         Datetime,
         Picker,
-        XButton,
         Divider,
-        Flexbox,
-        FlexboxItem,
-        Qrcode,
-        XSwitch,
-        Popup
+        Qrcode
     }
 })
 export default class VuxDemo extends Vue {

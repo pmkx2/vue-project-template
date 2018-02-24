@@ -1,5 +1,15 @@
 @import "src/style/base/base";
 
+// 设置页面高度最大为视图高度
+.page-view {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 .demo-box {
     margin: 20px 10px;
     text-align: center;
@@ -19,4 +29,19 @@
     background-color: #ffe26d;
     color: #000;
     text-align: center;
+}
+
+// 设置popup内容框的最大高度
+.popup-content-box {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.li-box {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
 }

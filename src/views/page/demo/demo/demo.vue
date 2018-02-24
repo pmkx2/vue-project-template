@@ -11,7 +11,7 @@
             <h1>{{ msg }}</h1>
             <p>
                 数据绑定：
-                <input v-model="msg" />
+                <input type="text" v-model="msg" />
             </p>
 
             <!-- 单向改变数据 -->
@@ -32,7 +32,7 @@
             </div>
 
             <div class="mt-20">
-                <input v-model="testTxt">
+                <input type="text" v-model="testTxt">
                 <div align="center">@Watch</div>
             </div>
 
@@ -48,7 +48,7 @@
 
             <div class="mt-20">
                 本地缓存测试（storage）<br>
-                <input v-model="storTest"><br>
+                <input type="text" v-model="storTest"><br>
                 <button @click="setStorageTest('storage-test')">写入缓存</button>
                 <button @click="removeStorageTest">删除缓存</button>
             </div>

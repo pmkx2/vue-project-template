@@ -42,8 +42,12 @@ module.exports = {
         "no-unused-vars": [0],
         // 禁止出现多行空行
         "no-multiple-empty-lines": [0],
-        //return 语句中不能有赋值表达式
+        // return 语句中不能有赋值表达式
         "no-return-assign": [0],
+        // 禁止无用的表达式
+        "no-unused-expressions": [0],
+        // 立即执行函数表达式的小括号风格
+        "wrap-iife": [0, "inside"],
         // 禁用 debugger 调试器：生成环境禁止使用
         "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
     }

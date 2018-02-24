@@ -103,11 +103,12 @@ input[type="month"],
 input[type="number"],
 input[type="time"],
 input[type="date"] {
-    // border: 1px solid #d7d7d7;
-    // border-radius: 0;
-    // font-weight: inherit;
-    // background-color: transparent;
-    // outline: none;
+    border: 1px solid $border-color;
+    border-radius: 0;
+    font-weight: inherit;
+    background-color: transparent;
+    outline: none;
+
     &::-webkit-input-placeholder {
         color: $color-grey-light;
     }
