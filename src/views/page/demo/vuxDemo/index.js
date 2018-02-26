@@ -57,9 +57,7 @@ export default class VuxDemo extends Vue {
 
     // 提示框
     showAlert() {
-        this.$vux.alert.show({
-            title: '提示',
-            content: '提示内容',
+        this.alert('提示内容', {
             onShow() {
                 console.log('显示提示框')
             },
@@ -71,9 +69,7 @@ export default class VuxDemo extends Vue {
 
     // 确认框
     showComfirm() {
-        this.$vux.confirm.show({
-            title: '标题',
-            content: '确认框内容',
+        this.comfirm('确认框内容', '提示', {
             onShow() {
                 console.log('显示')
             },

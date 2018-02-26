@@ -1,0 +1,28 @@
+// 文本位置
+.text-left,
+.t-l {
+    text-align: left;
+}
+
+.text-center,
+.t-c {
+    text-align: center;
+}
+
+.text-right,
+.t-r {
+    text-align: right;
+}
+
+// 省略号
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// /*解决苹果的滚动*/
+.scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+}

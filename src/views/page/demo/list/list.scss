@@ -2,15 +2,7 @@
 @import "src/style/base/variables";
 
 .content-body {
-    padding-top: 48px;
+    padding: 0.48rem 0 0.45rem;
     text-align: center;
-    font-size: 30px;
-}
-
-.test-list {
-    li {
-        line-height: 1.5;
-        padding: 5px;
-        border-bottom: 2px solid #ccc;
-    }
+    font-size: 0.3rem;
 }

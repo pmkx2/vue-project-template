@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="scroll-view">
         <!-- 头部组件 -->
         <nav-header :title="title"></nav-header>
 

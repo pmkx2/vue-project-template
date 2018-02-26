@@ -1,0 +1,89 @@
+$mgNum: (0, 5, 10, 12, 15, 20, 25, 30, 35, 40, 48, 50);
+
+@each $num in $mgNum {
+    .m#{$num} {
+        margin: #{$num * 0.01}rem;
+    }
+
+    .mt-#{$num} {
+        margin-top: #{$num * 0.01}rem;
+    }
+
+    .mb-#{$num} {
+        margin-bottom: #{$num * 0.01}rem;
+    }
+
+    .ml-#{$num} {
+        margin-left: #{$num * 0.01}rem;
+    }
+
+    .mr-#{$num} {
+        margin-right: #{$num * 0.01}rem;
+    }
+
+    .p#{$num} {
+        padding: #{$num * 0.01}rem;
+    }
+
+    .pt-#{$num} {
+        padding-top: #{$num * 0.01}rem;
+    }
+
+    .pb-#{$num} {
+        padding-bottom: #{$num * 0.01}rem;
+    }
+
+    .pl-#{$num} {
+        padding-left: #{$num * 0.01}rem;
+    }
+
+    .pr-#{$num} {
+        padding-right: #{$num * 0.01}rem;
+    }
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.flex-container {
+    display: flex;
+}
+
+// 流式布局
+.flex-wrap-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// 两端布局
+.flex-both-side {
+    display: flex;
+    justify-content: space-between;
+}
+
+// 遮盖阴影
+.cover-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 990;
+}
+
+// 滑动视图
+.scroll-view {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}

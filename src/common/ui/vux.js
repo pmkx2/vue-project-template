@@ -1,5 +1,10 @@
 import Vue from 'vue'
 import {
+    ToastPlugin,
+    LoadingPlugin,
+    AlertPlugin,
+    ConfirmPlugin,
+    // component
     Flexbox,
     FlexboxItem,
     Popup,
@@ -7,6 +12,11 @@ import {
     XSwitch
 } from 'vux'
 
+Vue.use(ToastPlugin)
+Vue.use(LoadingPlugin)
+Vue.use(AlertPlugin)
+Vue.use(ConfirmPlugin)
+// component
 Vue.component('flexbox', Flexbox)
 Vue.component('flexbox-item', FlexboxItem)
 Vue.component('popup', Popup)

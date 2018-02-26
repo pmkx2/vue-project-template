@@ -6,8 +6,8 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 45px;
-    line-height: 45px;
+    height: 0.45rem;
+    line-height: 0.45rem;
     text-align: center;
     background: $color-back;
 }
@@ -28,11 +28,11 @@
         &:not(:first-child) {
             &::before {
                 position: absolute;
-                top: 10px;
+                top: 0.1rem;
                 left: 0;
-                height: 26px;
+                height: 0.26rem;
                 content: "";
-                border-left: 1px solid rgba(255, 255, 255, 0.5);
+                border-left: 0.01rem solid rgba(255, 255, 255, 0.5);
             }
         }
 

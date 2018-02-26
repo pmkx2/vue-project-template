@@ -72,7 +72,7 @@
         <!-- popUp：左侧 -->
         <div v-transfer-dom>
             <popup v-model="popUpLeft" position="left" @touchmove.native.prevent>
-                <div style="width: 150px; padding: 0 10px;">
+                <div style="width: 1.5rem; padding: 0 0.1rem;">
                     <x-button>菜单1</x-button>
                     <x-button>菜单2</x-button>
                     <x-button @click.native="popUpLeft = false" type="warn">关闭</x-button>
@@ -82,7 +82,7 @@
         <!-- popUp：右侧 -->
         <div v-transfer-dom>
             <popup v-model="popUpRight" position="right" width="100%">
-                <div style="width: 100%; padding: 10px;">
+                <div style="width: 100%; padding: 0.1rem;">
                     <x-button @click.native="popUpRight = false" type="warn">关闭</x-button>
                 </div>
             </popup>
@@ -106,7 +106,7 @@
         <!-- popUp：底部往上全高 -->
         <div v-transfer-dom>
             <popup v-model="popUpFull" height="80%">
-                <div style="position: absolute; right: 10px; top: 10px;">
+                <div style="position: absolute; right: 0.1rem; top: 0.1rem; font-size: 0.14rem;">
                     <x-button @click.native="popUpFull = false" mini type="warn">X</x-button>
                 </div>
                 <div class="popup-content-box">

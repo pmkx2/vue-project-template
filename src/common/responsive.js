@@ -19,7 +19,7 @@ let designWidth = 375
             document.querySelector('head').appendChild(meta)
         }
         meta.setAttribute('content', viewport)
-        docEl.style.fontSize = designWidth / 22 + 'px'
+        docEl.style.fontSize = designWidth / 10 + 'px'
     }
 
     document.addEventListener('orientationchange', callback, false)
