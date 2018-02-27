@@ -17,6 +17,9 @@ import {
 @Component({
     name: 'vuxDemo',
     mixins: [template],
+    metaInfo: {
+        title: 'vux demo'
+    },
     components: {
         Badge,
         GroupTitle,
@@ -103,5 +106,6 @@ export default class VuxDemo extends Vue {
                 value: i + ''
             })
         }
+        console.log(this.$route)
     }
 }

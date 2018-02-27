@@ -19,7 +19,10 @@ let routes = [
         path: '/list'
     }, {
         name: 'vuxDemo',
-        path: '/vuxDemo'
+        path: '/vuxDemo',
+        meta: {
+            title: 'vux-demo'
+        }
     }
 ]
 

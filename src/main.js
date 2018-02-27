@@ -2,6 +2,7 @@ import 'vue-svgicon/dist/polyfill'
 import Vue from 'vue'
 import router from './router'
 import store from 'store'
+import meta from 'vue-meta'
 
 // Vue.config.productionTip = false
 
@@ -17,9 +18,13 @@ import 'common/directives'
 
 // import all icons
 import * as svgicon from 'vue-svgicon'
-import './views/icons'
+import 'views/icons'
 Vue.use(svgicon, {
     tagName: 'icon'
+})
+
+Vue.use(meta, {
+    keyName: 'metaInfo'
 })
 
 const FastClick = require('fastclick')
