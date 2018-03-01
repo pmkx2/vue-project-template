@@ -48,10 +48,10 @@
                 <flexbox-item><div class="flex-demo">自动分布2</div></flexbox-item>
                 <flexbox-item><div class="flex-demo">自动分布3</div></flexbox-item>
             </flexbox>
-            <flexbox class="mt-10" orient="vertical">
+            <!-- <flexbox class="mt-10" orient="vertical">
                 <flexbox-item><div class="flex-demo">垂直1</div></flexbox-item>
                 <flexbox-item><div class="flex-demo">垂直2</div></flexbox-item>
-            </flexbox>
+            </flexbox> -->
         </div>
 
         <!-- qrcode -->
@@ -64,15 +64,15 @@
         <divider>popUp 弹窗</divider>
         <group>
             <x-switch title="左边菜单" v-model="popUpLeft"></x-switch>
-            <x-switch title="左侧滑窗(100%)" v-model="popUpRight"></x-switch>
+            <x-switch title="右侧滑窗(100%)" v-model="popUpRight"></x-switch>
             <x-switch title="顶部(无背景)" v-model="popUpTop"></x-switch>
             <x-switch title="底部" v-model="popUpBottom"></x-switch>
-            <x-switch title="底部(全页)" v-model="popUpFull"></x-switch>
+            <x-switch title="底部(全页或固定高度)" v-model="popUpFull"></x-switch>
         </group>
         <!-- popUp：左侧 -->
         <div v-transfer-dom>
             <popup v-model="popUpLeft" position="left" @touchmove.native.prevent>
-                <div style="width: 1.5rem; padding: 0 0.1rem;">
+                <div style="width: 1.5rem; padding: 0.1rem;">
                     <x-button>菜单1</x-button>
                     <x-button>菜单2</x-button>
                     <x-button @click.native="popUpLeft = false" type="warn">关闭</x-button>
@@ -115,7 +115,12 @@
             </popup>
         </div>
 
-        <!--  -->
+        <!-- 格式化处理 -->
+        <divider>format 格式化</divider>
+        <group>
+            <cell title="日期格式化：">{{ formatDate | dateFormat }}</cell>
+            <cell title="金额格式化：">{{ formatNumber | moneyFormat }}</cell>
+        </group>
     </div>
 </template>
 <style src="./vuxDemo.scss" lang="scss" scoped></style>

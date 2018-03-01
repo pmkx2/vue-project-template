@@ -3,6 +3,7 @@ import Vue from 'vue'
 import router from './router'
 import store from 'store'
 import meta from 'vue-meta'
+import * as filters from 'common/filters'
 
 // Vue.config.productionTip = false
 
@@ -25,6 +26,10 @@ Vue.use(svgicon, {
 
 Vue.use(meta, {
     keyName: 'metaInfo'
+})
+
+Object.keys(filters).forEach(key => {
+    Vue.filter(key, filters[key])
 })
 
 const FastClick = require('fastclick')

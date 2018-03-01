@@ -46,6 +46,9 @@ export default class VuxDemo extends Vue {
     popUpTop = false
     popUpBottom = false
     popUpFull = false
+    // data format
+    formatDate = new Date()
+    formatNumber = 123456789.12
 
     // 显示Toast
     showToast() {
