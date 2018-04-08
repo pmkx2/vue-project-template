@@ -1,8 +1,10 @@
 
-function getView(viewName) {
+function getView(viewName, title) {
     return (resolve, reject) => {
         require.ensure([], (require) => {
-            resolve(require(`src/views/page/otherPage/${viewName}`))
+            let modules = require(`src/views/page/otherPage/${viewName}`)
+            modules.default.options.metaInfo = { title }
+            resolve(modules)
         }, reject, 'otherPage')
     }
 }
@@ -10,13 +12,16 @@ function getView(viewName) {
 let routes = [
     {
         name: 'list',
-        path: '/otherPage/list'
+        path: '/otherPage/list',
+        meta: {
+            title: 'otherPageList'
+        }
     }
 ]
 
 routes.forEach((v) => {
     if (!v.redirect && !v.component) {
-        v.component = getView(v.name)
+        v.component = getView(v.name, v.meta.title)
     }
 })
 

@@ -1,8 +1,10 @@
 
-function getView(viewName) {
+function getView(viewName, title) {
     return (resolve, reject) => {
         require.ensure([], (require) => {
-            resolve(require(`src/views/page/demo/${viewName}`))
+            let modules = require(`src/views/page/demo/${viewName}`)
+            modules.default.options.metaInfo = { title }
+            resolve(modules)
         }, reject, 'demo')
     }
 }
@@ -13,16 +15,22 @@ let routes = [
         redirect: '/demo'
     }, {
         name: 'demo',
-        path: '/demo'
+        path: '/demo',
+        meta: {
+            title: 'demo'
+        }
     }, {
         name: 'list',
-        path: '/list'
+        path: '/list',
+        meta: {
+            title: 'demo-list'
+        }
     }
 ]
 
 routes.forEach((v) => {
     if (!v.redirect && !v.component) {
-        v.component = getView(v.name)
+        v.component = getView(v.name, v.meta.title)
     }
 })
 
