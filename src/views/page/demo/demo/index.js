@@ -2,6 +2,8 @@ import Vue from 'src/views/base'
 import { Component, Watch } from 'vue-property-decorator'
 import template from './demo.vue'
 
+import { icons } from 'vue-svgicon'
+
 import storage from 'src/unit/storage'
 import { Store } from 'store/modules/demo'
 
@@ -29,6 +31,7 @@ export default class Demo extends Vue {
         '底部选项3'
     ]
     storTest = ''
+    iconsList = []
 
     set testTxt(txt) {
         this.txt = txt
@@ -127,6 +130,9 @@ export default class Demo extends Vue {
 
     // 约定放置于底部
     created() {
+        if (icons) {
+            Object.keys(icons).forEach(key => this.iconsList.push(key))
+        }
         // console.log(this.isLoading)
         // this.getTmpList()
     }

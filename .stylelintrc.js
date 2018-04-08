@@ -9,6 +9,9 @@ module.exports = {
     "extends": "stylelint-config-standard",
     "plugins": ['stylelint-order'],
     "rules": {
+        // 不明规则的定义
+        "at-rule-no-unknown": null,
+        // 指定十六进制颜色的大小写
         "color-hex-case": null,
         "color-hex-length": null,
         "max-empty-lines": 1,
@@ -16,11 +19,12 @@ module.exports = {
         // 字符串使用双引号
         "string-quotes": "double",
         // 使用了 autoprefix 不需要前缀
-        "property-no-vendor-prefix": true,
+        "property-no-vendor-prefix": null,
         "selector-type-no-unknown": null,
         "selector-pseudo-element-colon-notation": null,
         "selector-pseudo-class-no-unknown": null,
         "number-leading-zero": null,
+        "string-no-newline": null,
         // 属性顺序
         "property-no-unknown": [true, {
             ignoreProperties: ["composes"]

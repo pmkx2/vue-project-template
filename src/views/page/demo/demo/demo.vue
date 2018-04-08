@@ -52,6 +52,16 @@
                 <button @click="setStorageTest('storage-test')">写入缓存</button>
                 <button @click="removeStorageTest">删除缓存</button>
             </div>
+
+            <div class="mt-20">
+                <h2>svg-icon</h2>
+                <span v-for="n in iconsList" :key="'icon_' + n" class="icon-block">
+                    <icon :icon="n" width="40" color="#35495e"></icon>
+                    <div>
+                        <span class="name">{{ n }}</span>
+                    </div>
+                </span>
+            </div>
         </div>
     </div>
 </template>

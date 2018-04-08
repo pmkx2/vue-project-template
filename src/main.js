@@ -1,5 +1,6 @@
 import 'vue-svgicon/dist/polyfill'
 import Vue from 'vue'
+import 'common/ui'
 import router from './router'
 import store from 'store'
 import meta from 'vue-meta'
@@ -10,8 +11,6 @@ import * as filters from 'common/filters'
 import 'src/style/app.scss'
 import App from 'src/views/app'
 
-// ui
-import 'common/ui'
 // directives
 import 'common/directives'
 // responsive
