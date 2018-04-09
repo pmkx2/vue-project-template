@@ -11,9 +11,6 @@ function getView(viewName, title) {
 
 let routes = [
     {
-        path: '',
-        redirect: '/demo'
-    }, {
         name: 'demo',
         path: '/demo',
         meta: {

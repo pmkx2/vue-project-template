@@ -7,7 +7,10 @@ import otherPage from './modules/otherPage'
 
 Vue.use(VueRouter)
 
-let routes = []
+let routes = [
+    { path: '/', redirect: '/demo' },
+    { path: '*', redirect: '/404', hidden: true }
+]
 const router = new VueRouter({
     routes: routes
         .concat(demo)
