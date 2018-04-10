@@ -22,6 +22,12 @@ let routes = [
         meta: {
             title: 'demo-list'
         }
+    }, {
+        name: 'element',
+        path: '/demo/element',
+        meta: {
+            title: 'element'
+        }
     }
 ]
 

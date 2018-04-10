@@ -4,8 +4,7 @@ import router from './router'
 import store from 'store'
 
 import 'normalize.css/normalize.css'
-
-import ElementUI from 'element-ui'
+import 'ui/element'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import 'src/style/app.scss'
