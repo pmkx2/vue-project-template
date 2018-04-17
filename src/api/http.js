@@ -52,12 +52,17 @@ export let ax = axios.create({
     }],
     transformResponse: [function (data) {
         if (data) {
-            
+
         } else {
             let msg = 'Unknow Error'
             throw new Error(msg)
         }
     }]
+})
+
+ax.interceptors.response.use(function (res) {
+    // let headers = res.headers
+    return res
 })
 
 // http get method
