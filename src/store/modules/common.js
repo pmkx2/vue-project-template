@@ -2,36 +2,35 @@ import Vuex from 'vuex'
 import { getTypes, getModule, getStore } from '../utils/storeUtil'
 import { getter, mutation, action } from '../utils/vuexUtil'
 import api from 'api'
+import storage from 'src/unit/storage'
 
-export const storeName = 'demo'
+export const storeName = 'common'
 
 /** state **/
 let state = {
-    tmpList: [],
-    isLoading: false
+    sidebar: {
+        opened: !+storage.get('sidebarStatus')
+    }
 }
 
 /** getters **/
 let getters = getter(state, {
-
+    sidebar: state => state.sidebar
 })
 
 /** mutations **/
 let mutations = mutation(state, {
-    setTmpList(state, data) {
-        state.tmpList = data
+    toggleSideBar(state, data) {
+        storage.set('sidebarStatus', state.sidebar.opened ? 1 : 0)
+        state.sidebar.opened = !state.sidebar.opened
     }
 })
 
 /** actions **/
 let actions = action(state, {
-    async getTmpList({ commit }) {
-        let res = await api.demo.getList()
-        commit('setTmpList', res)
-    },
-
-    pageLoading({ commit }, loading) {
-        state.isLoading = loading
+    // sidebar展开状态
+    async toggleSideBar({ commit }, value) {
+        commit('toggleSideBar', value)
     }
 })
 

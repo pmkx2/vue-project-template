@@ -4,19 +4,19 @@ import VueRouter from 'vue-router'
 // import modules
 import error from './modules/error'
 import demo from './modules/demo'
-import otherPage from './modules/otherPage'
+import ems from './modules/ems'
 
 Vue.use(VueRouter)
 
 let routes = [
-    { path: '/', redirect: '/demo' },
+    { path: '/', redirect: '/ems/home' },
     { path: '*', redirect: '/404', hidden: true }
 ]
 const router = new VueRouter({
     routes: routes
         .concat(error)
         .concat(demo)
-        .concat(otherPage)
+        .concat(ems)
 })
 
 router.beforeEach((to, from, next) => {

@@ -1,4 +1,4 @@
-//状态管理
+// 状态管理
 'use strict'
 
 import Vue    from 'vue'
@@ -6,6 +6,7 @@ import Vuex   from 'vuex'
 import { mutation } from './utils/vuexUtil'
 
 // import modules
+import common from './modules/common'
 import demo from './modules/demo'
 
 Vue.use(Vuex)
@@ -18,6 +19,7 @@ let store = new Vuex.Store({
     getters: {},
     actions: {},
     modules: {
+        common,
         demo
     }
 })

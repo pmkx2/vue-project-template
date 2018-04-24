@@ -1,14 +1,15 @@
 import 'vue-svgicon/dist/polyfill'
 import Vue from 'vue'
-import router from './router'
-import store from 'store'
 
 import 'normalize.css/normalize.css'
 import 'ui/element'
 import 'element-ui/lib/theme-chalk/index.css'
+import './permission'
 
-import 'src/style/app.scss'
+import router from './router'
+import store from 'store'
 import App from 'src/views/app'
+import 'src/style/app.scss'
 
 // import all icons
 import * as svgicon from 'vue-svgicon'

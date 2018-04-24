@@ -1,6 +1,10 @@
 import Vue from 'vue'
 
 import {
+    Container,
+    Aside,
+    Header,
+    Main,
     Pagination,
     Dialog,
     Menu,
@@ -53,6 +57,10 @@ import {
     DropdownItem
 } from 'element-ui'
 
+Vue.use(Container)
+Vue.use(Aside)
+Vue.use(Header)
+Vue.use(Main)
 Vue.use(Pagination)
 Vue.use(Dialog)
 Vue.use(Menu)
