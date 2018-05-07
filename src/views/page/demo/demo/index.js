@@ -103,7 +103,10 @@ export default class Demo extends Vue {
     }
 
     // 监听信息 ------------------------
-    @Watch('msg', { deep: true })
+    @Watch('msg', {
+        deep: true,     // 是否深度监听
+        immediate: true // 是否在方法声明时先执行一次
+    })
     changeMsg(val) {
         console.log(val)
     }
