@@ -21,6 +21,9 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     next()
+    // remove loading
+    let $loading = document.querySelector('#appPageLoading')
+    if ($loading) $loading.remove()
 })
 
 export default router
