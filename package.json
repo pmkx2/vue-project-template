@@ -10,7 +10,8 @@
         "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
         "test": "npm run unit",
         "lint": "eslint --ext .js,.vue src test/unit",
-        "build": "node build/build.js"
+        "build:sit": "cross-env NODE_ENV=sit node build/build.js",
+        "build:deploy": "cross-env NODE_ENV=production node build/build.js"
     },
     "dependencies": {
         "axios": "^0.17.1",
@@ -45,7 +46,7 @@
         "chai": "^4.1.2",
         "chalk": "^2.0.1",
         "copy-webpack-plugin": "^4.0.1",
-        "cross-env": "^5.0.1",
+        "cross-env": "^5.1.5",
         "css-loader": "^0.28.11",
         "eslint": "^4.15.0",
         "eslint-config-standard": "^10.2.1",

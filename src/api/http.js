@@ -9,7 +9,7 @@ const host = config.api.host
 function buildHeader(option) {
     let headers = {
         'X-Application-Key': config.api.key,
-        'X-Request-Sign': '',
+        'X-Request-Sign': ''
     }
     if (option) {
         headers = { ...headers, ...option }
