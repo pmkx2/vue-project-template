@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import 'vue-svgicon/dist/polyfill'
 import Vue from 'vue'
 

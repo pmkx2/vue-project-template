@@ -128,8 +128,51 @@ export default class Demo extends Vue {
         fn1()
     }
 
+    createLetter() {
+        let letterBig = 'QWERTYUIOPASDFGHJKLZXCVBNNM'
+        let letterMin = letterBig.toLowerCase()
+        let limitBig = (() => {
+            let obj = {}
+            'GUKQTMOSL'.split('').forEach(k => { obj[k] = true })
+            return obj
+        })()
+        let limitMin = (() => {
+            let obj = {}
+            'qwertxlqx'.split('').forEach(k => { obj[k] = true })
+            return obj
+        })()
+        let bigLet = 2000000
+        let minLet = 1000000
+        let text = []
+
+        console.time('letter')
+        // big
+        for (let i = 0; i < bigLet; i++) {
+            let letter = letterBig[Math.floor(Math.random() * 24)]
+            text.push(letter)
+        }
+        // min
+        for (let i = 0; i < minLet; i++) {
+            let letter = letterMin[Math.floor(Math.random() * 24)]
+            let index = Math.floor(Math.random() * bigLet)
+            let target = text[index]
+            // 处理大小写
+            if (limitBig[target] === true) {
+                letter = letter.toUpperCase()
+            } else if (limitMin[target] === true) {
+                letter = letter.toLowerCase()
+            }
+            text[index] = target + letter
+        }
+        let newText = text.join('')
+        console.log(newText.length)
+        console.log(newText)
+        console.timeEnd('letter')
+    }
+
     // 约定放置于底部
     created() {
+        this.createLetter()
         // console.log(this.isLoading)
         // this.getTmpList()
     }

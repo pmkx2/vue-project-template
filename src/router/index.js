@@ -23,7 +23,9 @@ router.beforeEach((to, from, next) => {
     next()
     // remove loading
     let $loading = document.querySelector('#appPageLoading')
-    if ($loading) $loading.remove()
+    if ($loading) {
+        document.body.removeChild($loading)
+    }
 })
 
 export default router
