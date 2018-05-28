@@ -172,7 +172,7 @@ export default class Demo extends Vue {
 
     // 约定放置于底部
     created() {
-        this.createLetter()
+        // this.createLetter()
         // console.log(this.isLoading)
         // this.getTmpList()
     }
