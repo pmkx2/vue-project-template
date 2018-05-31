@@ -1,10 +1,11 @@
 <template>
     <el-menu mode="horizontal">
-        <!-- <hamburger
+        <hamburger
+            class="slide-button"
             :toggleClick="toggleOpen"
             :isActive="sidebar.opened"
             style="float: left;">
-        </hamburger> -->
+        </hamburger>
 
         <breadcrumb></breadcrumb>
     </el-menu>
