@@ -2,6 +2,7 @@ import axios from 'axios'
 import * as md5 from 'md5'
 import stringify from 'qs/lib/stringify'
 import config from 'common/config'
+import { Notification as $notify } from 'element-ui'
 
 const host = config.api.host
 
@@ -17,13 +18,21 @@ function buildHeader(option) {
     return headers
 }
 
-function handleError (err) {
+function handleError(err = {}) {
+    let errorCode = err.errorCode
     // 如果是手动取消的请求，不显示错误信息
-    if (axios.isCancel(err)) {
-        console.log(err)
+    if (axios.isCancel(errorCode)) {
+        console.log(errorCode)
     } else {
         // 错误处理
-        console.log('api接口报错，请检查地址是否正确')
+        let msg = err.message || '发生未知错误，请重试'
+        if (('' + errorCode).indexOf('timeout') > -1) {
+            msg = '加载超时！请检查你的网络'
+        }
+        $notify.error({
+            title: '',
+            message: msg
+        })
     }
 }
 
@@ -41,6 +50,22 @@ function processData(apiData = {}) {
     return data
 }
 
+function transformResponse(data) {
+    if (data) {
+        if (data.success) {
+            let res = data.data
+            return res
+        } else {
+            handleError(data)
+            let msg = data.message || '发生未知错误，请重试'
+            throw new Error(msg)
+        }
+    } else {
+        let msg = 'Unknow Error'
+        throw new Error(msg)
+    }
+}
+
 export let ax = axios.create({
     baseURL: host,
     headers: buildHeader(),
@@ -51,12 +76,7 @@ export let ax = axios.create({
         return stringify(data)
     }],
     transformResponse: [function (data) {
-        if (data) {
-
-        } else {
-            let msg = 'Unknow Error'
-            throw new Error(msg)
-        }
+        return transformResponse(data)
     }]
 })
 
@@ -72,19 +92,15 @@ export function get(url, data) {
     }).then((res) => {
         return res
     }).catch((err) => {
-        handleError(err)
         throw err
     })
 }
 
 // http post method
 export function post(url, data) {
-    return ax.get(`${host}${url}`, {
-        params: processData(data)
-    }).then((res) => {
-        return res
+    return ax.post(`${host}${url}`, processData(data)).then((res) => {
+        return res.data
     }).catch((err) => {
-        handleError(err)
         throw err
     })
 }
