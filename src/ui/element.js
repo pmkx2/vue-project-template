@@ -110,3 +110,5 @@ Vue.use(DropdownMenu)
 Vue.use(DropdownItem)
 
 Vue.prototype.$loading = Loading.service
+Vue.prototype.$message = Message
+Vue.prototype.$notify = Notification

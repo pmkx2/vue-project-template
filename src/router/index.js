@@ -4,19 +4,21 @@ import VueRouter from 'vue-router'
 // import modules
 import error from './modules/error'
 import demo from './modules/demo'
-import ems from './modules/ems'
+import table from './modules/table'
+import form from './modules/form'
 
 Vue.use(VueRouter)
 
 let routes = [
-    { path: '/', redirect: '/ems/home' },
+    { path: '/', redirect: '/table/normal' },
     { path: '*', redirect: '/404', hidden: true }
 ]
 const router = new VueRouter({
     routes: routes
         .concat(error)
         .concat(demo)
-        .concat(ems)
+        .concat(table)
+        .concat(form)
 })
 
 router.beforeEach((to, from, next) => {

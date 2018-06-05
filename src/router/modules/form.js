@@ -3,38 +3,29 @@ import Layout from 'src/views/components/layout'
 function getView(viewName, title) {
     return (resolve, reject) => {
         require.ensure([], (require) => {
-            let modules = require(`src/views/page/ems/${viewName}`)
+            let modules = require(`src/views/page/form/${viewName}`)
             modules.default.options.metaInfo = { title }
             resolve(modules)
-        }, reject, 'ems')
+        }, reject, 'form')
     }
 }
 
 let routes = {
-    name: 'ems',
-    path: '/ems',
-    redirect: '/ems/home',
+    name: 'form',
+    path: '/form',
+    redirect: '/form/baseForm',
     component: Layout,
     meta: {
-        title: '首页',
+        title: '表单',
         icon: 'vue'
     },
     children: [
-        // 首页
+        // 常规表单
         {
-            name: 'home',
-            path: 'home',
+            name: 'baseForm',
+            path: 'baseForm',
             meta: {
-                title: '首页',
-                icon: 'vue'
-            }
-        },
-        // 列表
-        {
-            name: 'list',
-            path: 'list',
-            meta: {
-                title: '列表',
+                title: '常规表单',
                 icon: 'vue'
             }
         }
