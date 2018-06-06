@@ -3,12 +3,15 @@
 
         <!-- 控制按钮 -->
         <el-row>
-            <el-col :span="10" align="left">
+            <el-col :span="6" align="left">
                 <el-input v-model="queryInfo.search" placeholder="搜索内容">
                 </el-input>
             </el-col>
-            <el-col :span="14" align="right">
-                <el-button>高级筛选</el-button>
+            <el-col :span="8" align="left">
+                <el-button class="ml-10">高级筛选</el-button>
+            </el-col>
+            <el-col :span="10" align="right">
+                <el-button>导出</el-button>
             </el-col>
         </el-row>
         <!-- / 控制按钮 -->
@@ -48,6 +51,11 @@
                         :type="state[scope.row.state].cls">
                         {{ state[scope.row.state].text }}
                     </el-tag>
+                    <el-tag
+                        v-else
+                        type="info">
+                        未定义
+                    </el-tag>
                 </template>
             </el-table-column>
             <el-table-column
@@ -82,6 +90,36 @@
         </el-row>
         <!-- / 分页 -->
 
+        <!-- dialog -->
+        <el-dialog title="编辑内容" :visible.sync="showDialog">
+
+            <el-form ref="formdig" :model="formDialog" label-width="80px">
+                <el-form-item label="名称">
+                    <el-input v-model="formDialog.name"></el-input>
+                </el-form-item>
+                <el-form-item label="地址">
+                    <el-input v-model="formDialog.address"></el-input>
+                </el-form-item>
+                <el-form-item label="日期">
+                    <el-date-picker
+                        v-model="formDialog.date"
+                        type="date"
+                        placeholder="选择日期">
+                    </el-date-picker>
+                </el-form-item>
+                <el-form-item label="状态">
+                    <el-input v-model="formDialog.state"></el-input>
+                </el-form-item>
+            </el-form>
+
+            <el-row>
+                <el-col :span="24" align="right">
+                    <el-button @click="cancelEdit">取消</el-button>
+                    <el-button type="primary" @click="confirmEdit">确定</el-button>
+                </el-col>
+            </el-row>
+        </el-dialog>
+        <!-- / dialog -->
     </div>
 </template>
 

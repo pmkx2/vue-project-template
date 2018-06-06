@@ -10,6 +10,7 @@ import template from './normal.vue'
 })
 export default class Normal extends Vue {
     isLoading = false
+    showDialog = false
     tableData = []
     state = {
         '1': { text: '审核成功', cls: 'success' },
@@ -22,9 +23,34 @@ export default class Normal extends Vue {
         search: ''
     }
 
+    formDialog = {
+        date: '',
+        name: '',
+        state: '',
+        address: ''
+    }
+    formDialogId = null
+
     // 编辑信息
     editInfo(index, val) {
-        console.log(val)
+        this.showDialog = true
+        this.formDialogId = index
+        this.formDialog = { ...val }
+    }
+
+    // 取消编辑
+    cancelEdit() {
+        this.showDialog = false
+    }
+
+    // 确定编辑
+    confirmEdit() {
+        let tmpData = this.tableData[this.formDialogId]
+        tmpData.date = this.formDialog.date
+        tmpData.name = this.formDialog.name
+        tmpData.state = this.formDialog.state
+        tmpData.address = this.formDialog.address
+        this.showDialog = false
     }
 
     // 删除信息
@@ -52,13 +78,15 @@ export default class Normal extends Vue {
     }
 
     created() {
+        let tData = []
         for (let i = 1; i < 8; i++) {
-            this.tableData.push({
+            tData.push({
                 date: `2016-05-0${i + 1}`,
                 name: `王小虎${i}`,
                 state: '' + Math.floor(Math.random() * 5 + 1),
                 address: `上海市普陀区金沙江路 151${i}号`
             })
         }
+        this.tableData = tData
     }
 }
