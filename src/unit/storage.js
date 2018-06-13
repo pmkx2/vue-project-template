@@ -22,7 +22,7 @@ export class Storage {
      * @param key
      * @param defaultVal
      */
-    get(key, defaultVal = null){
+    get(key, defaultVal = null) {
         let jsonData = localStorage.getItem(this.getFullKey(key))
         if (jsonData === null) {
             return defaultVal
