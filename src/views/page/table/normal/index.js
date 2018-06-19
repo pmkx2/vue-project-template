@@ -59,21 +59,20 @@ export default class Normal extends Vue {
             confirmButtonText: '确定',
             cancelButtonText: '取消',
             type: 'warning'
-        }).then(() => {
-            this.isLoading = true
-            console.log(index, val)
-            setTimeout(() => {
-                this.$notify({
-                    type: 'success',
-                    message: '删除成功!'
-                })
+        }).then(confirm => {
+            if (confirm) {
+                this.isLoading = true
+                console.log(index, val)
+                setTimeout(() => {
+                    this.$notify({
+                        type: 'success',
+                        message: '删除成功!'
+                    })
+                    this.isLoading = false
+                }, 1000)
+            } else {
                 this.isLoading = false
-            }, 1000)
-        }).catch(() => {
-            this.$notify({
-                type: 'info',
-                message: '已取消删除'
-            })
+            }
         })
     }
 
