@@ -4,6 +4,7 @@ import template from './layout.vue'
 import { Store as ComStore } from 'store/modules/common'
 
 import Sidebar from './unit/sidebar'
+import HeaderBar from './unit/headerBar'
 import NavBar from './unit/navBar'
 import MainContent from './unit/mainContent'
 
@@ -12,6 +13,7 @@ import MainContent from './unit/mainContent'
     mixins: [template],
     components: {
         Sidebar,
+        HeaderBar,
         NavBar,
         MainContent
     }

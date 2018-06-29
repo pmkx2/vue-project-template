@@ -1,13 +1,14 @@
 <template>
     <el-container>
-        <el-aside class="sidebar-container" :class="{ 'hide-sidebar':sidebar.opened }">
-            <sidebar></sidebar>
-        </el-aside>
+        <el-header>
+            <header-bar></header-bar>
+        </el-header>
         <el-container class="app-wrapper">
-            <el-header>
-                <nav-bar></nav-bar>
-            </el-header>
+            <el-aside class="sidebar-container" :class="{ 'hide-sidebar':sidebar.opened }">
+                <sidebar></sidebar>
+            </el-aside>
             <el-main>
+                <!-- <nav-bar class="mb-10"></nav-bar> -->
                 <main-content></main-content>
             </el-main>
         </el-container>

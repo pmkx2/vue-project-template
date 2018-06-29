@@ -9,6 +9,11 @@
     @include clearfix;
 }
 
+.el-header {
+    height: 50px !important;
+    padding: 0;
+}
+
 // 整体容器
 .el-container {
     height: 100vh;

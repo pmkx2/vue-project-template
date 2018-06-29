@@ -109,7 +109,7 @@ input[type="date"] {
     // background-color: transparent;
     // outline: none;
     &::-webkit-input-placeholder {
-        color: $color-grey-light;
+        color: $color-font-placeholder;
     }
 }
 
@@ -124,7 +124,7 @@ input[type="date"] {
 // }
 textarea {
     &::-webkit-input-placeholder {
-        color: $color-grey-light;
+        color: $color-font-placeholder;
     }
 }
 

@@ -25,43 +25,6 @@
     }
 }
 
-.el-tree {
-    padding: 20px;
-    background: $color-home-bg;
-
-    div.el-tree-node__content {
-        height: 40px;
-        padding: 10px 10px;
-        margin-bottom: -1px;
-        border: 1px solid $color-border-ddd;
-        background: $color-white;
-
-        &:hover {
-            background: #F5F5F5;
-        }
-
-        &.active {
-            background: #409EFF;
-            color: $color-white;
-        }
-    }
-}
-
-.el-col-4 {
-    width: 240px;
-    min-height: calc(100vh - 50px);
-    background: $color-home-bg;
-}
-
-.el-col-20 {
-    width: calc(100% - 240px);
-    padding: 20px;
-}
-
-.el-table {
-    margin-top: 20px;
-}
-
 .el-pagination {
     margin-top: 20px;
     text-align: right;

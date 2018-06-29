@@ -3,12 +3,10 @@
 
         <!-- 控制按钮 -->
         <el-row>
-            <el-col :span="6" align="left">
-                <el-input v-model="queryInfo.search" placeholder="搜索内容">
-                </el-input>
-            </el-col>
-            <el-col :span="8" align="left">
-                <el-button class="ml-10">高级筛选</el-button>
+            <el-col :span="14" align="left">
+                <el-input v-model="queryInfo.search" placeholder="搜索内容" style="width: 300px;"></el-input>
+                <el-button style="margin-left: 5px;">搜索</el-button>
+                <el-button style="margin-left: 5px;">高级筛选</el-button>
             </el-col>
             <el-col :span="10" align="right">
                 <el-button>导出</el-button>
@@ -22,7 +20,7 @@
             class="mt-10"
             :data="tableData"
             stripe
-            style="width: 100%">
+            style="width: 100%;">
             <el-table-column
                 type="selection"
                 width="55">
