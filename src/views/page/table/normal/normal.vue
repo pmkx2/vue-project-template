@@ -81,7 +81,7 @@
             <el-col :span="24" align="right">
                 <el-pagination
                     background
-                    layout="prev, pager, next"
+                    layout="total, prev, pager, next"
                     :total="100">
                 </el-pagination>
             </el-col>

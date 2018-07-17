@@ -40,6 +40,20 @@
             </el-form-item>
 
             <el-form-item
+                label="地区"
+                prop="area"
+                required>
+                <el-select v-model="queryInfo.area" filterable placeholder="请选择">
+                    <el-option
+                        v-for="v in areaOption"
+                        :key="v.value"
+                        :label="v.label"
+                        :value="v.value">
+                    </el-option>
+                </el-select>
+            </el-form-item>
+
+            <el-form-item
                 label="活动性质"
                 prop="type"
                 required>

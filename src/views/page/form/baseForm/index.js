@@ -18,7 +18,8 @@ export default class BaseForm extends Vue {
         delivery: false,
         type: [],
         resource: '',
-        desc: ''
+        desc: '',
+        area: 33
     }
     rules = {
         name: [
@@ -44,6 +45,16 @@ export default class BaseForm extends Vue {
             { required: true, message: '请填写活动形式', trigger: 'blur' }
         ]
     }
+    areaOption = [{
+        value: 11,
+        label: '北京'
+    }, {
+        value: 22,
+        label: '上海'
+    }, {
+        value: 33,
+        label: '重庆'
+    }]
 
     changeSelect(val) {
         console.log(val)
