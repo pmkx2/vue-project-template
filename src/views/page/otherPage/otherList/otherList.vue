@@ -6,4 +6,4 @@
         </p>
     </div>
 </template>
-<style src="./list.scss" lang="scss" scoped></style>
+<style src="./otherList.scss" lang="scss" scoped></style>

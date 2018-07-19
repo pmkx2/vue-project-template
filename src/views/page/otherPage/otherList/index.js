@@ -1,14 +1,14 @@
 import Vue from 'src/views/base'
 import { Component, Prop, Watch } from 'vue-property-decorator'
-import template from './list.vue'
+import template from './otherList.vue'
 
 @Component({
-    name: 'list',
+    name: 'otherList',
     mixins: [template],
     components: {
     }
 })
-export default class List extends Vue {
+export default class OtherList extends Vue {
     title = '其他列表页面'
 
     created() {

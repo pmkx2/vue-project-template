@@ -11,7 +11,7 @@ function getView(viewName, title) {
 
 let routes = [
     {
-        name: 'list',
+        name: 'otherList',
         path: '/otherPage/list',
         meta: {
             title: 'otherPageList'
