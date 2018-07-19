@@ -2,7 +2,7 @@ import 'vue-svgicon/dist/polyfill'
 import Vue from 'vue'
 import router from './router'
 import store from 'store'
-import meta from 'vue-meta'
+// import meta from 'vue-meta'
 
 // Vue.config.productionTip = false
 
@@ -16,9 +16,9 @@ Vue.use(svgicon, {
     tagName: 'icon'
 })
 
-Vue.use(meta, {
-    keyName: 'metaInfo'
-})
+// Vue.use(meta, {
+//     keyName: 'metaInfo'
+// })
 
 /* eslint-disable no-new */
 new Vue({
