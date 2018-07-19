@@ -14,7 +14,7 @@
                 height: 100%;
                 background: #fff;
             }
-        
+
             .page-loader-inner {
                 display: inline-block;
                 position: absolute;
@@ -23,43 +23,44 @@
                 -webkit-transform: translateX(-50%);
                 transform: translateX(-50%);
             }
-        
-            .loader-ball-pulse>div:nth-child(0) {
+
+            .loader-ball-pulse > div {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                margin: 2px;
+                border-radius: 100%;
+                animation-fill-mode: both;
+                background-color: #aaa;
+                -webkit-animation-fill-mode: both;
+            }
+
+            .loader-ball-pulse > div:nth-child(0) {
                 -webkit-animation: loader-scale 0.75s 0s infinite cubic-bezier(.2, .68, .18, 1.08);
                 animation: loader-scale 0.75s 0s infinite cubic-bezier(.2, .68, .18, 1.08);
             }
-        
-            .loader-ball-pulse>div:nth-child(1) {
+
+            .loader-ball-pulse > div:nth-child(1) {
                 -webkit-animation: loader-scale 0.75s 0.12s infinite cubic-bezier(.2, .68, .18, 1.08);
                 animation: loader-scale 0.75s 0.12s infinite cubic-bezier(.2, .68, .18, 1.08);
             }
-        
-            .loader-ball-pulse>div:nth-child(2) {
+
+            .loader-ball-pulse > div:nth-child(2) {
                 -webkit-animation: loader-scale 0.75s 0.24s infinite cubic-bezier(.2, .68, .18, 1.08);
                 animation: loader-scale 0.75s 0.24s infinite cubic-bezier(.2, .68, .18, 1.08);
             }
-        
-            .loader-ball-pulse>div:nth-child(3) {
+
+            .loader-ball-pulse > div:nth-child(3) {
                 -webkit-animation: loader-scale 0.75s 0.36s infinite cubic-bezier(.2, .68, .18, 1.08);
                 animation: loader-scale 0.75s 0.36s infinite cubic-bezier(.2, .68, .18, 1.08);
             }
-        
-            .loader-ball-pulse>div {
-                background-color: #aaa;
-                width: 15px;
-                height: 15px;
-                border-radius: 100%;
-                margin: 2px;
-                -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-                display: inline-block;
-            }
-        
+
             @keyframes loader-scale {
                 30% {
                     -webkit-transform: scale(0.3);
                     transform: scale(0.3);
                 }
+
                 100% {
                     -webkit-transform: scale(1);
                     transform: scale(1);
@@ -77,7 +78,7 @@
         </div>
         <div id="app"></div>
         <!-- built files will be auto injected -->
-        <!-- 判断浏览器 -->
+        <!-- 判断浏览器
         <script>
             function myBrowser() {
                 var userAgent = navigator.userAgent;
@@ -100,5 +101,6 @@
                 console.log('我是 IE');
             }
         </script>
+         -->
     </body>
 </html>

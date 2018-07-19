@@ -2,6 +2,7 @@ import 'babel-polyfill'
 import 'vue-svgicon/dist/polyfill'
 import Vue from 'vue'
 
+import { vueHandleErr } from 'common/err'
 import 'normalize.css/normalize.css'
 import 'ui/element'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -18,6 +19,8 @@ import './views/icons'
 Vue.use(svgicon, {
     tagName: 'icon'
 })
+
+Vue.config.errorHandler = vueHandleErr
 
 /* eslint-disable no-new */
 new Vue({

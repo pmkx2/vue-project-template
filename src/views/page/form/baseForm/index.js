@@ -72,6 +72,6 @@ export default class BaseForm extends Vue {
     async submit() {
         if (!await this.validate(this.formName)) return
 
-        console.log('aaaa')
+        console.log('提交数据')
     }
 }
