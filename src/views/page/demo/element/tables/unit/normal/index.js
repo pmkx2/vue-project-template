@@ -3,7 +3,7 @@ import { Component, Prop, Watch } from 'vue-property-decorator'
 import template from './normal.vue'
 
 @Component({
-    name: 'normal',
+    name: 'element-table-unit-normal',
     mixins: [template],
     components: {
     }
@@ -82,7 +82,7 @@ export default class Normal extends Vue {
             tData.push({
                 date: `2016-05-0${i + 1}`,
                 name: `王小虎${i}`,
-                state: '' + Math.floor(Math.random() * 5 + 1),
+                state: '' + ~~(Math.random() * 5 + 1),
                 address: `上海市普陀区金沙江路 151${i}号`
             })
         }
