@@ -7,20 +7,24 @@
         <nav-footer :items="footerItem" @clickItem="clickButtonItem"></nav-footer>
 
         <div class="content-body">
-            <!-- 数据绑定 -->
             <h1>{{ msg }}</h1>
-            <p>
-                数据绑定：
-                <input v-model="msg" />
-            </p>
 
-            <!-- 单向改变数据 -->
-            <p>
-                <button @click="changeTitle">单向改变数据：改变标题</button>
-            </p>
+            <div>
+                <div class="min-title">数据绑定</div>
+                <!-- 数据绑定 -->
+                <p>
+                    数据绑定：
+                    <input v-model="msg" />
+                </p>
+                <!-- 单向改变数据 -->
+                <p>
+                    <button @click="changeTitle">单向改变数据：改变标题</button>
+                </p>
+            </div>
 
             <!-- 改变状态 -->
             <div class="mt-20">
+                <div class="min-title">store</div>
                 <div v-show="isLoading === true">加载中...</div>
                 <div v-show="isLoading === false">加载完成</div>
                 <button @click="changeLoading">改变加载中状态</button>
@@ -28,29 +32,45 @@
 
             <!-- API数据获取 -->
             <div class="mt-20">
+                <div class="min-title">接口提交</div>
                 <button @click="getList">API数据获取</button>
             </div>
 
             <div class="mt-20">
+                <div class="min-title">@Watch 监听</div>
                 <input v-model="testTxt">
-                <div align="center">@Watch</div>
             </div>
 
             <div class="mt-20">
+                <div class="min-title">svg icon</div>
                 <icon icon="vue" width="40" color="#42b983 #35495e"></icon>
-                <div align="center">svg icon</div>
             </div>
 
             <div class="mt-20">
+                <div class="min-title">跳转</div>
                 <button @click="runGoTo1">跳转test1</button>
                 <button @click="runGoTo2">跳转test2</button>
             </div>
 
             <div class="mt-20">
-                本地缓存测试（storage）<br>
+                <div class="min-title">本地缓存测试（storage）</div>
                 <input v-model="storTest"><br>
                 <button @click="setStorageTest('storage-test')">写入缓存</button>
                 <button @click="removeStorageTest">删除缓存</button>
+            </div>
+
+            <div>
+                <div class="min-title">图片选择与预览</div>
+                <form enctype="multipart/form-data">
+                    <input type="file"
+                        @change="selectedFile($event)"
+                        multiple
+                        accept="image/png, image/jpeg">
+                </form>
+                <img v-for="(v, i) in imgs"
+                    :key="'tem_img_' + i"
+                    :src="v" class="preview-imgs"
+                    @click="removeFile(i)"/>
             </div>
         </div>
     </div>

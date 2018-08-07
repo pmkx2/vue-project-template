@@ -16,7 +16,7 @@ module.exports = {
         // 字符串使用双引号
         "string-quotes": "double",
         // 使用了 autoprefix 不需要前缀
-        "property-no-vendor-prefix": false,
+        "property-no-vendor-prefix": null,
         "selector-type-no-unknown": null,
         "selector-pseudo-element-colon-notation": null,
         "selector-pseudo-class-no-unknown": null,

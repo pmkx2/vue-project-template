@@ -29,6 +29,9 @@ export default class Demo extends Vue {
         '底部选项3'
     ]
     storTest = ''
+    // 图片预览
+    canReaderImg = true
+    imgs = []
 
     set testTxt(txt) {
         this.txt = txt
@@ -111,6 +114,31 @@ export default class Demo extends Vue {
         console.log(val)
     }
 
+    // 文件选择预览 -----------------------
+    selectedFile(event) {
+        let files = event.target.files
+        if (!window.FileReader) {
+            this.canReaderImg = false
+            return
+        }
+
+        this.imgs = []
+        console.log(files)
+        for (let obj of files) {
+            let reader = new FileReader()
+            reader.readAsDataURL(obj)
+            reader.onloadend = () => {
+                let url = reader.result
+                this.imgs.push(url)
+            }
+        }
+    }
+
+    // 删除文件
+    removeFile(index) {
+        this.imgs.splice(index, 1)
+    }
+
 
     // 代码规范测试区域：此方法内代码有报红时，代码规范检测功能正常。 ---------------------
     codeTest() {
@@ -128,6 +156,7 @@ export default class Demo extends Vue {
         fn1()
     }
 
+    // 计算test
     createLetter() {
         let letterBig = 'QWERTYUIOPASDFGHJKLZXCVBNNM'
         let letterMin = letterBig.toLowerCase()
@@ -148,13 +177,13 @@ export default class Demo extends Vue {
         console.time('letter')
         // big
         for (let i = 0; i < bigLet; i++) {
-            let letter = letterBig[Math.floor(Math.random() * 24)]
+            let letter = letterBig[~~(Math.random() * 24)]
             text.push(letter)
         }
         // min
         for (let i = 0; i < minLet; i++) {
-            let letter = letterMin[Math.floor(Math.random() * 24)]
-            let index = Math.floor(Math.random() * bigLet)
+            let letter = letterMin[~~(Math.random() * 24)]
+            let index = ~~(Math.random() * bigLet)
             let target = text[index]
             // 处理大小写
             if (limitBig[target] === true) {
@@ -166,7 +195,7 @@ export default class Demo extends Vue {
         }
         let newText = text.join('')
         console.log(newText.length)
-        console.log(newText)
+        // console.log(newText)
         console.timeEnd('letter')
     }
 
