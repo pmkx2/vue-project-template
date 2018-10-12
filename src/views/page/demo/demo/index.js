@@ -121,16 +121,26 @@ export default class Demo extends Vue {
             this.canReaderImg = false
             return
         }
-
+        // 支持文件读取
         this.imgs = []
         console.log(files)
         for (let obj of files) {
             let reader = new FileReader()
+            // 读取文件
             reader.readAsDataURL(obj)
+            // 读取开始
+            reader.onloadstart = () => {}
+            // 读取中
+            reader.onprogress = () => {}
+            // 读取成功完成
+            reader.onload = () => {}
+            // 读取完成
             reader.onloadend = () => {
                 let url = reader.result
                 this.imgs.push(url)
             }
+            // 中断读取
+            // reader.abort()
         }
     }
 

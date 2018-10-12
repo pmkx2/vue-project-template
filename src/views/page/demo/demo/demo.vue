@@ -44,6 +44,21 @@
             <div class="mt-20">
                 <div class="min-title">svg icon</div>
                 <icon icon="vue" width="40" color="#42b983 #35495e"></icon>
+                <div>
+                    <svg style="width: 0; position: absolute; opacity: 0;">
+                        <defs>
+                            <linearGradient id="gradient-1" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%"  stop-color="#57f0c2"/>
+                                <stop offset="95%" stop-color="#147d58"/>
+                            </linearGradient>
+                            <linearGradient id="gradient-2" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%"  stop-color="#7295c2"/>
+                                <stop offset="95%" stop-color="#252e3d"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <icon icon="vue" width="40" color="url(#gradient-1) url(#gradient-2)"></icon>
+                </div>
             </div>
 
             <div class="mt-20">
